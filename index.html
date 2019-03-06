@@ -1,0 +1,42 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"></meta>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> <!-- 'glue layer' that allows pages rendered by the dom-->
+
+    <title>React Basics</title>
+
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      //this is javascript!!
+      class App extends React.Component { 
+        state = {
+          name: 'John',
+          age: '20'
+        }
+        render() { //method responsible for rendering template, must be in class
+          return ( //jsx block
+            <div>
+              <h1 className="app-content"> Title </h1>  
+              <p>{this.state.name}, age {this.state.age}</p>
+            </div>
+          ) // note: return only 1 root element, which is <div> block ; cannot add class="", MUST be className="" ; curely brackets allow for dynamic loading
+
+        } 
+      }
+      ReactDOM.render(<App />, document.getElementById('app'))
+    </script>
+
+    </div>
+
+  </body>
+</html>
